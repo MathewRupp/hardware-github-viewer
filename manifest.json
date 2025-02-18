@@ -1,24 +1,16 @@
 {
-    "manifest_version": 3,
-    "name": "GitHub Hardware Viewer",
-    "description": "Tool for viewing hardware design files on Github",
-    "version": "1.1",
-    "action": {
-      "default_popup": "hello.html",
-      "default_icon": "opulo.png"
-    },
-    "content_scripts": [
-      {
-        "js": ["scripts/content.js"],
-        "matches": [
-          "https://github.com/*"
-        ]
-      }
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": [ "opulo.png" ],
-            "matches": [ "https://github.com/*" ]
-        }
-    ]
+  "manifest_version": 3,
+  "name": "Gitea 3D & KiCad Viewer",
+  "version": "1.0",
+  "description": "Adds buttons to view 3D models and PCB files in Gitea repositories.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["http://gladiator01.gladiator.local:3000/"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
   }
+}
